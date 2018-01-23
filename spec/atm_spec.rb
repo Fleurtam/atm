@@ -1,5 +1,4 @@
 require './lib/atm.rb'
-require 'date'
 
 describe Atm do
   let(:account) { instance_double('Account') }
@@ -25,5 +24,11 @@ describe Atm do
   it 'Rejects withdraw if account has insuffient funds' do
     expected_output = { status: false, message: 'insuffient funds', date: Date.today }
     expect(subject.withdraw(1005, account)).to eq expected_output
+  end
+
+  it 'Rejects withdraw if ATM has insufficient funds' do
+    subject.funds = 50
+    expected_output = { status: false, message: 'insufficient funds in ATM', date: Date.today }
+    expect(subject.withdraw(100, account)).to eq expected_output
   end
 end
