@@ -6,7 +6,7 @@ class Atm
     @funds = 1000
   end
 
-  def withdraw(amount, account)
+  def withdraw(amount, pin_code, account)
     case
 
     when insuffient_funds_in_account?(amount, account)
