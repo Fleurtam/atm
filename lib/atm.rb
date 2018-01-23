@@ -4,9 +4,7 @@ class Atm
 
   def initialize
     @funds = 1000
-
   end
-
 
   def withdraw(amount, account)
     case
@@ -28,5 +26,11 @@ class Atm
 
   def insufficient_funds_in_atm?(amount)
     @funds < amount
+  end
+
+  def perform_transaction(amount, account)
+    @funds -= amount
+    account.balance = account.balance - amount
+    { status: true, message: 'success', date: Date.today, amount: amount }
   end
 end
