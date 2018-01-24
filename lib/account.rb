@@ -2,7 +2,7 @@
 require 'date'
 
 class Account
-  attr_accessor :pin_code, :account_status, :expected_date
+  attr_accessor :pin_code, :account_status
 
   STANDARD_VALIDITY_YRS = 5
 
