@@ -15,4 +15,9 @@ describe Account do
       Date.today.next_year(Account::STANDARD_VALIDITY_YRS).strftime('%m/%y')
     expect(subject.exp_date).to eq expected_date
   end
+
+  it 'deactivates account using Instance method' do
+    subject.deactivate
+    expect(subject.account_status).to eq :deactivated
+  end
 end
