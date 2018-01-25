@@ -1,9 +1,10 @@
 class Person
-  attr_accessor :name, :cash
+  attr_accessor :name, :cash, :account
 
   def initialize(attrs = {})
     @name = set_name(attrs[:name])
     @cash = cash
+    @account = account
   end
 
   def set_name(obj)
@@ -16,5 +17,9 @@ class Person
 
   def cash
     cash = 0
+  end
+
+  def account
+    account = nil
   end
 end
