@@ -7,6 +7,10 @@ class Person
     @account = account
   end
 
+  def create_account
+    @account = Account.new(owner: self)
+  end
+
   def set_name(obj)
     obj.nil? ? missing_name : @name = obj
   end
