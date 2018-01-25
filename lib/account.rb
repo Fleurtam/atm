@@ -11,7 +11,6 @@ class Account
     @account_status = :active
     @exp_date = exp_date
     set_owner(attrs[:owner])
-
   end
 
   def exp_date
