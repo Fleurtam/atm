@@ -18,7 +18,7 @@ describe Account do
     expect(subject.exp_date).to eq expected_date
   end
 
-  it 'deactivates account using Instance method' do
+  it 'deactivates account using instance method' do
     subject.deactivate
     expect(subject.account_status).to eq :deactivated
   end
