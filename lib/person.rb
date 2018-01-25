@@ -1,10 +1,14 @@
+require './lib/person.rb'
+require './lib/atm.rb'
+require './lib/account.rb'
+
 class Person
   attr_accessor :name, :cash, :account
 
   def initialize(attrs = {})
     @name = set_name(attrs[:name])
     @cash = cash
-    @account = account
+    @account = nil
   end
 
   def create_account
@@ -21,9 +25,5 @@ class Person
 
   def cash
     cash = 0
-  end
-
-  def account
-    account = nil
   end
 end
