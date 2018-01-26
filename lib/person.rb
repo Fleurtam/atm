@@ -7,7 +7,7 @@ class Person
 
   def initialize(attrs = {})
     @name = set_name(attrs[:name])
-    @cash = cash
+    @cash = 0
     @account = nil
   end
 
@@ -40,9 +40,13 @@ class Person
     @account.balance += amount
   end
 
-  def cash
-    cash = 0
+  def increase_cash(response)
+    @cash += response[:amount]
   end
+
+#  def cash
+#    @cash
+#  end
 
   def withdraw(args = {})
     @account == nil ? missing_account : withdraw_funds(args)

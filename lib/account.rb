@@ -19,15 +19,19 @@ class Account
     @account_status = :deactivated
   end
 
+  def exp_date
+    Date.today.next_year(Account::STANDARD_VALIDITY_YRS).strftime('%m/%y')
+  end
+
   private
 
   def generate_pin
     rand(1000..9999)
   end
 
-  def exp_date
-    Date.today.next_year(Account::STANDARD_VALIDITY_YRS).strftime('%m/%y')
-  end
+#  def exp_date
+#    Date.today.next_year(Account::STANDARD_VALIDITY_YRS).strftime('%m/%y')
+#  end
 
   def set_owner(obj)
     obj == nil ? missing_owner : @owner = obj
