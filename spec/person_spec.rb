@@ -30,6 +30,7 @@ describe Person do
     it 'with himself as an owner' do
       expect(subject.account.owner).to be subject
     end
+  end
 
   describe 'can manage funds if an account been created' do
     let(:atm) { Atm.new }
@@ -42,7 +43,7 @@ describe Person do
     end
   end
 
-  describe 'can not manage funds if no account is created' do
+  describe 'can not manage funds if no account been created' do
     # As a Person without a Bank Account,
     # in order to prevent me from using the wrong bank account,
     # I should NOT be able to to make a deposit.
@@ -50,5 +51,4 @@ describe Person do
       expect { subject.deposit(100) }.to raise_error(RuntimeError, 'No account present')
     end
   end
-end
 end
