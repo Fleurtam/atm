@@ -31,6 +31,10 @@ class Person
     raise 'No account present'
   end
 
+  def missing_atm
+    raise 'An ATM is required'
+  end
+
   def deposit_funds(amount)
     @cash -= amount
     @account.balance += amount
