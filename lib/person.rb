@@ -27,6 +27,10 @@ class Person
     raise 'A name is required'
   end
 
+  def missing_account
+    raise 'No account present'
+  end
+
   def deposit_funds(amount)
     @cash -= amount
     @account.balance += amount
